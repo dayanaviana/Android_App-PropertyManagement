@@ -5,7 +5,6 @@ data class RegisterResponse(
     val error: Boolean,
     val message: String
 )
-
 data class RegisterErrorResponse(
     val error: Boolean,
     val message: String

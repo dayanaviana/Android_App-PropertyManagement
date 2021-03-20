@@ -1,11 +1,13 @@
 package com.android_training.propertymanagement.ui.auth
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.android_training.propertymanagement.R
+import com.android_training.propertymanagement.app.MyApplication
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

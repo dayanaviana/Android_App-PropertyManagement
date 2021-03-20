@@ -1,8 +1,11 @@
 package com.android_training.propertymanagement.ui.auth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.android_training.propertymanagement.R
+import com.android_training.propertymanagement.app.MyApplication
 import com.android_training.propertymanagement.ui.auth.adapter.MyFragmentAdapter
 import kotlinx.android.synthetic.main.activity_signup.*
 
@@ -21,5 +24,9 @@ class SignupActivity : AppCompatActivity() {
 
         //Handle icons setup on adapter
         myFragmentAdapter.setTitleIcons(tab_layout)
+    }
+
+    fun alreadyRegistered_onClick(v: View){
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 }

@@ -17,6 +17,9 @@ import retrofit2.http.POST
 
 interface AuthApi {
     @POST("auth/login")
+    suspend fun postLogin_suspend(@Body user: User): AuthResponse
+
+    @POST("auth/login")
     fun postLogin(@Body user: User): Call<LoginResponse>
 
     //Retrofit

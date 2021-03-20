@@ -7,9 +7,12 @@ import androidx.lifecycle.*
 import com.android_training.propertymanagement.data.models.RegisterResponse
 import com.android_training.propertymanagement.data.repositories.AuthRepository
 import com.android_training.propertymanagement.data.models.User
+import com.android_training.propertymanagement.data.repositories.UserRepository
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_register.view.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class AuthViewModel : ViewModel() {
     lateinit var disposable: Disposable
@@ -24,22 +27,11 @@ class AuthViewModel : ViewModel() {
 
     var actionObserver = MutableLiveData<AuthAction>()
     enum class AuthAction{STARTED, FINISHED, SUCCESS, FAILURE}
-    fun postActionToView(action: AuthAction){
+    private fun postActionToView(action: AuthAction){
         actionObserver.value = action
     }
 
 
-    fun btnLogin_onClick(view: View){
-        postActionToView(AuthAction.STARTED)
-
-        if (email.isNullOrEmpty() || password.isNullOrBlank()){
-            postActionToView(AuthAction.FAILURE) // Invalid Entry
-        }else {
-            var response: LiveData<String> = AuthRepository().login(email!!, password!!)
-            postActionToView(AuthAction.FINISHED)
-        }
-
-    }
 
     fun btnRegister_onClick(view: View){
         postActionToView(AuthAction.STARTED)
@@ -80,6 +72,12 @@ class AuthViewModel : ViewModel() {
         }
     }
 
+    fun logout() {
+        viewModelScope.launch(Dispatchers.IO) {
+            UserRepository().logout()
+//            logoutLiveData.postValue(true)
+        }
+    }
     override fun onCleared() {
         super.onCleared()
         disposable.dispose()
