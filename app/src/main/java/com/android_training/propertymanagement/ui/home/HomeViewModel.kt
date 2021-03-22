@@ -25,14 +25,12 @@ class HomeViewModel(): ViewModel() {
         actionObserver.value = action
     }
 
-
-
     fun getPropertyList(){
         viewModelScope.launch(Dispatchers.Main) {
             postActionToView(AuthAction.STARTED)
             try {
                 val response = PropertyRepository().getPropertyList()
-                propertyList = response.data
+                propertyList = response.properties
                 postActionToView(AuthAction.SUCCESS)
             }catch (e: Exception){
                 var msg = e.localizedMessage

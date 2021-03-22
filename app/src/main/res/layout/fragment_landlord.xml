@@ -1,4 +1,4 @@
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="vm"
@@ -20,36 +20,44 @@
             android:textAlignment="center"
             android:textSize="45dp"
             android:textStyle="bold" />
+
         <EditText
             android:id="@+id/edt_reg_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:hint="Name"
-            android:text="@={vm.name}"
             android:paddingLeft="10dp"
+            android:text="@={vm.name}"
             android:textSize="24dp" />
+
         <EditText
             android:id="@+id/edt_reg_email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="5dp"
             android:hint="Email"
-            android:text="@={vm.email}"
             android:inputType="textEmailAddress"
             android:paddingLeft="10dp"
+            android:text="@={vm.email}"
             android:textSize="24dp" />
 
-        <EditText
-            android:id="@+id/edt_reg_password"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:hint="Password"
-            android:text="@={vm.password}"
-            android:inputType="textPassword"
-            android:paddingLeft="10dp"
-            android:textSize="24dp" />
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/edt_reg_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:text="@={vm.password}"
+                android:textSize="24dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/txt_register_error"
@@ -65,13 +73,13 @@
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/corned_shape"
+            android:onClick="@{vm::btnRegister_onClick}"
             android:padding="10dp"
             android:text="Register"
-            android:onClick="@{vm::btnRegister_onClick}"
-            android:background="@drawable/corned_shape"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="50dp"
             android:textSize="20dp"
             android:textStyle="bold" />
 

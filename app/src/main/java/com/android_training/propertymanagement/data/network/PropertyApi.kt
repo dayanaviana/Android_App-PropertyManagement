@@ -5,7 +5,10 @@ import com.google.gson.annotations.SerializedName
 import io.reactivex.Flowable
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface PropertyApi {
 
@@ -13,10 +16,13 @@ interface PropertyApi {
     fun getPropertyFlowable() : Flowable<List<Property>>
 
     @GET("property")
-    suspend fun getPropertyList() : PropertyResponse
+    suspend fun getPropertyList() : PropertyListResponse
 
     @GET("property/user/{id}")
-    suspend fun getPropertyByUser(): Property
+    suspend fun getPropertyByUser(usedId: String): PropertyListResponse
+
+    @POST("property")
+    suspend fun postProperty(@Body property: Property): PropertyResponse
 
     companion object{
         //        operator fun invoke():AuthApi{
@@ -30,11 +36,19 @@ interface PropertyApi {
     }
 }
 
-data class PropertyResponse(
+data class PropertyListResponse(
     @SerializedName("count")
-    val count: Int,
+    val count: Int?,
     @SerializedName("data")
-    val data: ArrayList<Property>,
+    val properties: ArrayList<Property>,
     @SerializedName("error")
     val error: Boolean
+)
+data class PropertyResponse(
+    @SerializedName("data")
+    val property: Property?,
+    @SerializedName("error")
+    val error: Boolean,
+    @SerializedName("message")
+    val message: String
 )

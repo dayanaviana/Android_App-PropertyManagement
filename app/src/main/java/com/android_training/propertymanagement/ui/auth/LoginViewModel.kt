@@ -20,8 +20,7 @@ import retrofit2.HttpException
 import javax.inject.Inject
 
 class LoginViewModel: ViewModel() {
-    @Inject
-    lateinit var session: SessionManager
+    @Inject lateinit var session: SessionManager
 
     var email: String? = null
     var password: String? = null

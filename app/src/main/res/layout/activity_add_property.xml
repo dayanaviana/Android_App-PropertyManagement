@@ -1,0 +1,298 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.android_training.propertymanagement.ui.property.PropertyViewModel">
+        </variable>
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--    Step 1-->
+            <LinearLayout
+                android:id="@+id/layout_step1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="Step 1: Property Address"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="@string/step1_description"
+                    android:textSize="18dp" />
+
+                <!--        Address-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:text="@={vm.property.address}"
+                        android:id="@+id/edt_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Address"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--        City-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:text="@={vm.property.city}"
+                        android:id="@+id/edt_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="City"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--        State/Province-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:text="@={vm.property.state}"
+                        android:id="@+id/edt_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="State/Province"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--        Zip/ Postal Code-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_zipcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:text="@={vm.property.zipcode}"
+                        android:id="@+id/edt_zipcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Zip/Postal Code"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--        Country-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:text="@={vm.property.country}"
+                        android:id="@+id/edt_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Country"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <!--    Step 2-->
+            <LinearLayout
+                android:id="@+id/layout_step2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="Step 2: Property Details"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="@string/step2_description"
+                    android:textSize="18dp" />
+                <!--Status - Owned-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:id="@+id/edt_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:hint="Status"
+                        android:text="Owned"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--Multiple Units-->
+                <Switch
+                    android:id="@+id/switch_units"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_fields"
+                    android:padding="10dp"
+                    android:text="Are there multiple Units?"
+                    android:textSize="18dp" />
+                <!-- Purchase Price-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/label_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:padding="5dp"
+                    app:boxBackgroundColor="@color/transparent">
+
+                    <EditText
+                        android:id="@+id/edt_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Purchase Price"
+                        android:inputType="numberDecimal"
+                        android:text="@string/purchase_price"
+                        android:textColorHighlight="#DDE6DF"
+                        android:textSize="18dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--        Dashboard-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_fields"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/switch_dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Exclude from Dashboard?"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/dashboard"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+                <!--            Take Picture-->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_photo"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="@{vm::addPhoto_onClick}"
+                    android:text="Add a Photo of your property"
+                    android:textSize="16dp"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_camera"
+                    app:strokeColor="@color/green_logo_dark"
+                    app:strokeWidth="2dp" />
+            </LinearLayout>
+            <!--        Step 3 -->
+            <LinearLayout
+                android:id="@+id/layout_step3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="Step 3: Mortgage Information"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_step"
+                    android:padding="10dp"
+                    android:text="@string/step3_description"
+                    android:textSize="18dp" />
+
+                <Switch
+                    android:id="@+id/switch_mortgage"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_fields"
+                    android:padding="10dp"
+                    android:text="Does this property have a mortgage?"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+            <!--        Save-->
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/corned_shape"
+                android:onClick="@{vm::btnSaveNext_onClick}"
+                android:padding="10dp"
+                android:text="Save &amp; Add Tenants"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

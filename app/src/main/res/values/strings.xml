@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Property Management</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="step1_description">
+        Enter the rental property\'s address below.
+        The Address is used to label each property, and to make it easier to log trips.
+    </string>
+    <string name="step2_description">
+        Next we\'d like some basic information about the property.
+        If you input the Purchase Price then we can calculate your property\'s
+        Cash on Cash invested % correctly.
+    </string>
+    <string name="step3_description">
+        If your property has a mortgage, then inputting its mortgage terms enables
+        Housters to automatically set the principal, interest, and escrow amounts
+        when you log mortgage principal transactions. If you made extra principal
+        payments, then logging them as mortgage principal transactions will update
+        the amortization schedule.
+    </string>
+    <string name="purchase_price">
+        How much did you purchase the property for?
+    </string>
+    <string name="dashboard">
+        If excluded, this property won\'t be included in the main dashboard,
+        financial models and charts.
+    </string>
+</resources>

@@ -12,4 +12,8 @@ class SessionModule {
     fun provideSession(): SessionManager{
         return SessionManager()
     }
+    @Provides
+    fun provideUser(session: SessionManager): String{
+        return session.getUserId() ?: ""
+    }
 }
